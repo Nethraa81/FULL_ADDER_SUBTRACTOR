@@ -38,18 +38,103 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+![de tt 4](https://github.com/user-attachments/assets/31266a3c-a5d9-44b1-9415-f2ace12734bc)
+
+![DE tt 4 1](https://github.com/user-attachments/assets/0f16021c-9d37-418c-8f90-a32eaf38cdec)
+
 **Procedure**
 
-Write the detailed procedure here
+1.Type the program in Quartus software.
+   
+2.Compile and run th image.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
+
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+
+Developed by:Nethraa N
+
+RegisterNumber:24900193
 */
 
+```
+//full adder
+
+module ex04(sum, cout, a, b, cin);
+
+output sum;
+
+output cout;
+
+input a;
+
+input b;
+
+input cin;
+
+//internal nets
+
+wire sl,cl,c2;
+
+//Instantiate logic gate primitives xor (sl,a,b);
+
+and(cl,a,b);
+
+xor (sum, sl, cin);
+
+and(c2, sl, cin);
+
+or(cout, c2,cl);
+
+endmodule
+
+Full subractor
+
+module ex04a (df, bo, a, b, bin);
+
+output df;
+
+output bo;
+
+input a;
+
+input b;
+
+input bin;
+
+wire w1,w2, w3;
+
+assign w1=a^b;
+
+assign w2=(~a&b);
+
+assign w3=(-w1&bin);
+
+assign df-w1^bin;
+
+assign bo-w2/w3;
+
+endmodule
+```
 **RTL Schematic**
 
+![Screenshot 2024-12-08 182641](https://github.com/user-attachments/assets/cf201a56-bb63-47db-8900-c846a933776b)
+
+![Screenshot 2024-12-08 182656](https://github.com/user-attachments/assets/4c86eb76-2569-4219-9c14-1a4de9206bb4)
+
 **Output Timing Waveform**
+
+![Screenshot 2024-12-08 182836](https://github.com/user-attachments/assets/0cdb9c8a-7100-4326-be92-d45986e96ffe)
+
+![Screenshot 2024-12-08 182855](https://github.com/user-attachments/assets/50373acb-2cc7-447b-bbee-c0d76eb382d5)
+
 
 **Result:**
 
