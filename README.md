@@ -64,7 +64,6 @@ Developed by:Nethraa N
 RegisterNumber:24900193
 */
 
-```
 //full adder
 
 module ex04(sum, cout, a, b, cin);
@@ -122,7 +121,7 @@ assign df-w1^bin;
 assign bo-w2/w3;
 
 endmodule
-```
+
 **RTL Schematic**
 
 ![Screenshot 2024-12-08 182641](https://github.com/user-attachments/assets/cf201a56-bb63-47db-8900-c846a933776b)
